@@ -1,11 +1,33 @@
-<p>user-dashboard works!</p>
+<!-- <p>user-dashboard works!</p> -->
 
-<app-user-header></app-user-header>
+<!-- <app-user-header></app-user-header>
 <div class="row w-100">
  <div class="col clo-3">
     <app-user-menu></app-user-menu>
  </div>
   <div class="col col-9">
     <router-outlet></router-outlet>
+  </div>
+</div> -->
+
+<app-user-header></app-user-header>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Menu Section -->
+    <div class="col-md-3 col-xl-2 px-0 bg-dark">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <!-- Sidebar Content -->
+        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        
+        </a>
+        <app-user-menu></app-user-menu>
+      </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="col-md-9 col-xl-10 py-3">
+      <!-- Display menu data here -->
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

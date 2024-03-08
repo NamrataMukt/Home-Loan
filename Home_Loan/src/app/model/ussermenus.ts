@@ -10,12 +10,22 @@ export class Ussermenus {
                 {lable:'update resourse' , link:'update_employee'}
                 
             ],
-            CRM:[
+            crm:[
                 {lable:'View New Enquiry' , link:'view_enquiry'},
                 {lable:'Send Enquiry Feedback' , link:'feedback'},
                 {lable:'Check Loan Application' ,link:'view_loan_app'}
 
+            ],
+
+            opm:[
+                {lable:'Dashboard',link:'dashboard'},
+                {lable:'applicants' , link:'applicants'},
+                {lable:'approved-customer' , link:'approved-customer'},
+                {lable:'verification required' ,link:'verification-required'}
+                
+
             ]
+
 
         }
     ]

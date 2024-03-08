@@ -1,0 +1,53 @@
+<<div class="container mt-5">
+    <h2 class="mb-4">EMI Calculator</h2>
+    <h6>Home Loan EMI calculator is a basic calculator that helps you to calculate the EMI, monthly interest and monthly
+      reducing balance on the basis of principal amount, loan tenure and interest rate</h6>
+    
+    <!-- Form inside a card -->
+    <div class="card mt-4">
+      <div class="card-body">
+        <form (ngSubmit)="calculateEMI()" #emiForm="ngForm">
+          <div class="mb-3">
+            <label for="loanAmount" class="form-label">Loan Amount:</label>
+            <input type="number" class="form-control" id="loanAmount" name="loanAmount" [(ngModel)]="loanAmount" required>
+          </div>
+          <div class="mb-3">
+            <label for="interestRate" class="form-label">Interest Rate (%):</label>
+            <input type="number" class="form-control" id="interestRate" name="interestRate" [(ngModel)]="interestRate" required>
+          </div>
+          <div class="mb-3">
+            <label for="loanTenure" class="form-label">Loan Tenure (Months):</label>
+            <input type="number" class="form-control" id="loanTenure" name="loanTenure" [(ngModel)]="loanTenure" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Calculate EMI</button>
+        </form>
+      </div>
+    </div>
+  
+    <div *ngIf="emiAmount" class="mt-4">
+      <h4>EMI Amount: {{ emiAmount | currency:'INR':true:'1.2-2' }}</h4>
+    </div>
+  
+    <table class="table table-striped mt-3" *ngIf="emiDetails.length">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Beginning Loan Balance</th>
+          <th>EMI</th>
+          <th>Principle</th>
+          <th>Monthly Interest</th>
+          <th>Outstanding Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emiDetail of emiDetails">
+          <td>{{ emiDetail.month }}</td>
+          <td>{{ emiDetail.beginningBalance | currency:'INR':true:'1.2-2' }}</td>
+          <td>{{ emiDetail.emi | currency:'INR':true:'1.2-2' }}</td>
+          <td>{{ emiDetail.principle | currency:'INR':true:'1.2-2' }}</td>
+          <td>{{ emiDetail.interest | currency:'INR':true:'1.2-2' }}</td>
+          <td>{{ emiDetail.outstandingBalance | currency:'INR':true:'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

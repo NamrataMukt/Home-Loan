@@ -6,6 +6,7 @@ import { AboutComponent } from './template/about/about.component';
 import { LocationComponent } from './template/location/location.component';
 import { EnquiryComponent } from './includes/enquiry/enquiry.component';
 import { UserDashboardComponent } from './includes/user-dashboard/user-dashboard.component';
+import { EmiCalculatorComponent } from './template/emi-calculator/emi-calculator.component';
 
 const routes: Routes = 
 [
@@ -16,6 +17,9 @@ const routes: Routes =
     path:'fainance' ,component:DashboardComponent, children:[
       {
         path:'about' ,component:AboutComponent
+      },
+      {
+        path:'emi' ,component:EmiCalculatorComponent
       },
       {
         path:'location',component:LocationComponent
@@ -35,7 +39,10 @@ const routes: Routes =
       path:'admin', loadChildren:()=>import('./module/admin/admin.module').then(file=>file.AdminModule)
     },
     {
-      path:'re' ,loadChildren:()=>import('./module/crm/crm.module').then(file=>file.CrmModule)
+      path:'crm' ,loadChildren:()=>import('./module/crm/crm.module').then(file=>file.CrmModule)
+    },
+    {
+      path:'opm' ,loadChildren:()=>import('./module/operational-manager/operational-manager.module').then(file=>file.OperationalManagerModule)
     }
   ]
 }
