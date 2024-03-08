@@ -20,6 +20,8 @@ export class EmiCalculatorComponent {
   loanTenure: number;
   emiAmount: number;
   emiDetails: EmiDetails[] = [];
+  totalInterest: number;
+  totalPayableAmount: number;
 
   constructor() { }
 
@@ -31,6 +33,9 @@ export class EmiCalculatorComponent {
     const emi = principal * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments) / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
 
     this.emiAmount = emi;
+    this.totalInterest = (emi * numberOfPayments - principal);
+    this.totalPayableAmount = (emi * numberOfPayments);
+    
     this.calculateEmiDetails(principal, monthlyInterestRate, numberOfPayments);
   }
 
@@ -52,5 +57,4 @@ export class EmiCalculatorComponent {
 
       this.emiDetails.push(emiDetail);
     }
-  }
-}
+  }}
