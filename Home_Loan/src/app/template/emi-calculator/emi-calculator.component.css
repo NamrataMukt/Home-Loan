@@ -1,0 +1,12 @@
+body {
+    background-color: blue;
+}
+
+.basic-calculations {
+    float: right;
+    width: 40%;
+  }
+  
+  .card-body {
+    width: 50%;
+  }

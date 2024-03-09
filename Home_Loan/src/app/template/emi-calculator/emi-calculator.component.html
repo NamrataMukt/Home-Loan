@@ -1,0 +1,75 @@
+<div class="container mt-5">
+    <div class="row">
+      <!-- Left Column: Form -->
+      <div class="col-md-6">
+        <!-- Form inside a card -->
+        <div class="card mt-4">
+          <div class="card-body">
+            <!-- Form -->
+            <form (ngSubmit)="calculateEMI()" #emiForm="ngForm">
+              <!-- Loan Amount Input -->
+              <div class="mb-3">
+                <label for="loanAmount" class="form-label">Loan Amount:</label>
+                <input type="number" class="form-control" id="loanAmount" name="loanAmount" [(ngModel)]="loanAmount"
+                  required>
+              </div>
+              <!-- Interest Rate Input -->
+              <div class="mb-3">
+                <label for="interestRate" class="form-label">Interest Rate (%):</label>
+                <input type="number" class="form-control" id="interestRate" name="interestRate"
+                  [(ngModel)]="interestRate" required>
+              </div>
+              <!-- Loan Tenure Input -->
+              <div class="mb-3">
+                <label for="loanTenure" class="form-label">Loan Tenure (Months):</label>
+                <input type="number" class="form-control" id="loanTenure" name="loanTenure" [(ngModel)]="loanTenure"
+                  required>
+              </div>
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary">Calculate EMI</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Right Column: Basic Calculations -->
+      <div class="col-md-6 mt-4 mt-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h4>Detailed Calculations:</h4>
+            <div *ngIf="emiAmount">
+              <p>EMI: {{ emiAmount | currency:'INR':true:'1.2-2' }}</p>
+              <p>Total Interest: {{ totalInterest | currency:'INR':true:'1.2-2' }}</p>
+              <p>Total Payable Amount: {{ totalPayableAmount | currency:'INR':true:'1.2-2' }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Table for EMI Details -->
+    <table class="table table-striped mt-3" *ngIf="emiDetails.length">
+      <!-- Table Header -->
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Beginning Loan Balance</th>
+          <th>EMI</th>
+          <th>Principle</th>
+          <th>Monthly Interest</th>
+          <th>Outstanding Balance</th>
+        </tr>
+      </thead>
+      <!-- Table Body -->
+      <tbody>
+        <tr *ngFor="let emiDetail of emiDetails">
+          <td>{{ emiDetail.month }}</td>
+          <td>{{ emiDetail.beginningBalance | currency:'INR':true:'1.2-2' }}</td>
+          <td>{{ emiDetail.emi | currency:'INR':true:'1.2-2' }}</td>
+          <td>{{ emiDetail.principle | currency:'INR':true:'1.2-2' }}</td>
+          <td>{{ emiDetail.interest | currency:'INR':true:'1.2-2' }}</td>
+          <td>{{ emiDetail.outstandingBalance | currency:'INR':true:'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

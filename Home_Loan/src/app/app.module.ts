@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDashboardComponent } from './includes/user-dashboard/user-dashboard.component';
 import { UserHeaderComponent } from './includes/user-header/user-header.component';
 import { UserMenuComponent } from './includes/user-menu/user-menu.component';
+import { EmiCalculatorComponent } from './template/emi-calculator/emi-calculator.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UserMenuComponent } from './includes/user-menu/user-menu.component';
     EnquiryComponent,
     UserDashboardComponent,
     UserHeaderComponent,
-    UserMenuComponent
+    UserMenuComponent,
+    EmiCalculatorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Ussermenus } from '../../model/ussermenus';
 
@@ -10,6 +10,9 @@ import { Ussermenus } from '../../model/ussermenus';
 export class UserMenuComponent {
 
   constructor(private router:Router, private activatedRoute:ActivatedRoute) { }
+
+  
+
   userOptions:Array<any>;
   type:string;
   ngOnInit(): void {

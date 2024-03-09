@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 .navbar {
   margin-bottom: 10px;
   justify-content: center;
 }
+=======
+.custom-logout-btn {
+    background-color: black;
+    color: white; 
+  }
+>>>>>>> b531b668b3bd44837460ad6f2f831ba59f812945

@@ -6,6 +6,7 @@ import { AboutComponent } from './template/about/about.component';
 import { LocationComponent } from './template/location/location.component';
 import { EnquiryComponent } from './includes/enquiry/enquiry.component';
 import { UserDashboardComponent } from './includes/user-dashboard/user-dashboard.component';
+import { EmiCalculatorComponent } from './template/emi-calculator/emi-calculator.component';
 
 const routes: Routes = [
   {
@@ -22,8 +23,15 @@ const routes: Routes = [
         component: AboutComponent,
       },
       {
+<<<<<<< HEAD
         path: 'location',
         component: LocationComponent,
+=======
+        path:'emi' ,component:EmiCalculatorComponent
+      },
+      {
+        path:'location',component:LocationComponent
+>>>>>>> b531b668b3bd44837460ad6f2f831ba59f812945
       },
       {
         path: 'enquiry',
@@ -36,6 +44,7 @@ const routes: Routes = [
     ],
   },
 
+<<<<<<< HEAD
   {
     path: 'userdash',
     component: UserDashboardComponent,
@@ -54,6 +63,22 @@ const routes: Routes = [
       },
     ],
   },
+=======
+{
+  path:'userdash' ,component:UserDashboardComponent, children:[
+    {
+      path:'admin', loadChildren:()=>import('./module/admin/admin.module').then(file=>file.AdminModule)
+    },
+    {
+      path:'crm' ,loadChildren:()=>import('./module/crm/crm.module').then(file=>file.CrmModule)
+    },
+    {
+      path:'opm' ,loadChildren:()=>import('./module/operational-manager/operational-manager.module').then(file=>file.OperationalManagerModule)
+    }
+  ]
+}
+  
+>>>>>>> b531b668b3bd44837460ad6f2f831ba59f812945
 ];
 
 @NgModule({

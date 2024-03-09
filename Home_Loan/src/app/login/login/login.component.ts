@@ -33,5 +33,25 @@ export class LoginComponent {
     } else {
       alert('Enter valid authentication details...!');
     }
+<<<<<<< HEAD
+=======
+    else if(un==='crm' && ps==='crm123')
+    {
+      alert('User is an crm..!')
+      sessionStorage.setItem('userType','crm')
+      this.router.navigateByUrl('userdash/crm')
+    }
+    else if(un==='opm' && ps==='opm123')
+    {
+      alert('User is an opm..!')
+      sessionStorage.setItem('userType','opm')
+      this.router.navigateByUrl('userdash/opm')
+    }
+
+    else{
+      alert("Enter valid authentication details...!")
+    }
+ 
+>>>>>>> b531b668b3bd44837460ad6f2f831ba59f812945
   }
 }

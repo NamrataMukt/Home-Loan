@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 <div class="w-100 bg-dark menu">
   <!-- <h4 class="text-white text-center">Welcome To Finance</h4> -->
+=======
+<!-- <p>user-menu works!</p> -->
+
+<div class="w-100 bg-dark menu ">
+
+    <div *ngFor="let button of userOptions[0][type]" class="d-flex justify-content-center">
+      <button class="btn btn-danger mt-2" (click)="navigateTo(button.link)">{{button.lable}}</button>
+    </div>
+>>>>>>> b531b668b3bd44837460ad6f2f831ba59f812945
 
   <div
     *ngFor="let button of userOptions[0][type]"
