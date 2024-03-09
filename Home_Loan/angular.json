@@ -31,8 +31,12 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.css",
+<<<<<<< HEAD
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/font-awesome/css/font-awesome.css"
+=======
+              "node_modules/bootstrap/dist/css/bootstrap.css"
+>>>>>>> 833d358b77f74658e01eab913901a262617d9022
             ],
             "scripts": []
           },

@@ -1,0 +1,8 @@
+<form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+    <div>
+        <input type="text" formControlName="username" placeholder="Enter User Name"> <br>
+        <input type="text" formControlName="password" placeholder="Enter User Password"><br>
+        <button type="submit" class="btn btn-success">LogIn</button>
+        <button type="reset" (click)="onReset()" class="btn btn-success">Reset</button>
+    </div>
+</form>
